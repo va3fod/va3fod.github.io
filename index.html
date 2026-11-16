@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Val's Apps · VA3FOD</title>
-  <meta name="description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, and Șeptică, the classic Romanian card game.">
+  <meta name="description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, Șeptică, the classic Romanian card game, and RC Flight Log by Val.">
   <meta name="author" content="Val, VA3FOD">
   <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#121614" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://va3fod.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Val's Apps · VA3FOD">
-  <meta property="og:description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, and Șeptică, the classic Romanian card game.">
+  <meta property="og:description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, Șeptică, the classic Romanian card game, and RC Flight Log by Val.">
   <meta property="og:url" content="https://va3fod.github.io/">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Val's Apps · VA3FOD">
-  <meta name="twitter:description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, and Șeptică, the classic Romanian card game.">
+  <meta name="twitter:description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, Șeptică, the classic Romanian card game, and RC Flight Log by Val.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b4d3e'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23f4e6c3'%3EV%3C/text%3E%3C/svg%3E">
   <style>
     :root {
@@ -167,6 +167,62 @@
     }
     .open span { display: inline-block; transition: transform 0.15s ease; }
     a.card:hover .open span { transform: translateX(3px); }
+    a.card.card-wide { min-height: 0; }
+    .card-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      flex: 1;
+      width: 100%;
+    }
+    .card-copy p { flex: none; }
+    .features {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .features li {
+      margin: 0;
+      padding: 3px 0;
+    }
+    .features li strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+      margin-top: 16px;
+    }
+    .shots img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: var(--accent-soft);
+      box-shadow: 0 4px 14px rgba(28, 25, 23, 0.08);
+    }
+    @media (min-width: 700px) {
+      a.card.card-wide {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.9fr);
+        gap: 8px 28px;
+        align-items: center;
+      }
+      a.card.card-wide .shots {
+        margin-top: 0;
+        max-width: 460px;
+        justify-self: end;
+      }
+    }
     .support {
       margin-top: 28px;
       width: 100%;
@@ -297,6 +353,27 @@
         <h2>Șeptică</h2>
         <p>The classic Romanian card game, for 2 or 4 players versus the computer.</p>
         <span class="open">Open the game <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card card-wide" href="https://rc-flight-log-by-val-925911568211.us-west1.run.app" target="_blank" rel="noopener">
+        <div class="card-copy">
+          <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+            <rect width="48" height="48" rx="12" fill="#1d4f8a"/>
+            <path fill="#e8f1fb" d="M8.2 25.2c5.8-1 12.4-2 18.2-2.4l3.1-7.8c.25-.65 1.05-.95 1.7-.65l.85.4c.5.25.7.85.45 1.35L30.1 23.2c5.1-.25 9.2.3 11.1 1.1 1.2.55 1.2 1.55 0 2.05-1.9.75-6 .3-11.1 1.05l2.4 6.95c.25.5.05 1.1-.45 1.35l-.85.4c-.65.3-1.45 0-1.7-.65l-3.1-7.75c-2.1-.15-4.9-.35-8.2-.7v4.6c0 .55-.45 1-1 1h-.75c-.55 0-1-.45-1-1V26.3c-2.15.3-4.35.65-6.25 1-1.15.2-2.1-1.4-1.35-2.1z"/>
+          </svg>
+          <h2>RC Flight Log by Val</h2>
+          <p>A free app for logging your RC flights — electric, gas, or glow. It works offline with no account, your data stays on your device, and you can install it from the browser (Add to Home Screen or Install app) with no app store.</p>
+          <ul class="features">
+            <li><strong>Hangar</strong> — add planes, or snap a photo and it fills in the specs</li>
+            <li><strong>Battery Bay</strong> — tracks LiPo packs and flags tired ones</li>
+            <li><strong>Fields</strong> — live wind, plus headwind and crosswind for your runway</li>
+            <li><strong>Quick Log</strong> — log a flight in seconds, and print a PDF logbook</li>
+          </ul>
+          <span class="open">Open RC Flight Log <span aria-hidden="true">→</span></span>
+        </div>
+        <div class="shots">
+          <img src="images/rc-flight-log-hangar.webp" width="480" height="1068" alt="Hangar screen of RC Flight Log, showing two model airplanes with flight counts." loading="lazy" decoding="async">
+          <img src="images/rc-flight-log-fields.webp" width="480" height="1068" alt="Fields screen of RC Flight Log, showing live wind and runway headwind and crosswind." loading="lazy" decoding="async">
+        </div>
       </a>
     </main>
     <aside class="support" aria-labelledby="support-title">
