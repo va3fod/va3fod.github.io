@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Val's Apps · VA3FOD</title>
+  <meta name="description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, and Șeptică, the classic Romanian card game.">
+  <meta name="author" content="Val, VA3FOD">
+  <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121614" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://va3fod.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Val's Apps · VA3FOD">
+  <meta property="og:description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, and Șeptică, the classic Romanian card game.">
+  <meta property="og:url" content="https://va3fod.github.io/">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Val's Apps · VA3FOD">
+  <meta name="twitter:description" content="Free little apps and games, made by Val, VA3FOD. Science &amp; Math Adventure for kids, and Șeptică, the classic Romanian card game.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b4d3e'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23f4e6c3'%3EV%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --bg-accent: #e8efe8;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --card: #ffffff;
+      --card-border: #e7e2d8;
+      --shadow: 0 10px 30px rgba(28, 25, 23, 0.08);
+      --accent: #1b4d3e;
+      --accent-soft: #e6f0eb;
+      --gold: #b45309;
+      --link: #14532d;
+      --ring: #2f6f58;
+      --footer: #78716c;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121614;
+        --bg-accent: #1a2420;
+        --ink: #f4f1ea;
+        --muted: #c4bfb6;
+        --card: #1c2320;
+        --card-border: #2c3833;
+        --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        --accent: #8fbfa8;
+        --accent-soft: #24332d;
+        --gold: #e9c46a;
+        --link: #a7d4bf;
+        --ring: #8fbfa8;
+        --footer: #a8a29e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, var(--bg-accent), transparent 60%),
+        radial-gradient(900px 400px at 100% 0%, rgba(27, 77, 62, 0.08), transparent 55%),
+        var(--bg);
+      line-height: 1.55;
+      padding: calc(28px + env(safe-area-inset-top)) calc(20px + env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) calc(20px + env(safe-area-inset-left));
+    }
+    .wrap {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .mark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      display: block;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.85rem, 5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 4px;
+    }
+    .callsign {
+      margin: 0 0 16px;
+      font-size: 0.95rem;
+      font-weight: 650;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .intro {
+      margin: 0 auto;
+      max-width: 34rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 700px) {
+      .cards { grid-template-columns: 1fr 1fr; gap: 20px; }
+    }
+    a.card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px 22px 20px;
+      box-shadow: var(--shadow);
+      min-height: 180px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    a.card:hover {
+      transform: translateY(-3px);
+      border-color: var(--ring);
+    }
+    a.card:focus-visible {
+      outline: 3px solid var(--ring);
+      outline-offset: 3px;
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 14px;
+      flex: none;
+    }
+    h2 {
+      font-size: 1.22rem;
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      flex: 1;
+    }
+    .open {
+      margin-top: 16px;
+      font-weight: 650;
+      color: var(--link);
+      font-size: 0.95rem;
+    }
+    .open span { display: inline-block; transition: transform 0.15s ease; }
+    a.card:hover .open span { transform: translateX(3px); }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--footer);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b4d3e"/>
+        <text x="32" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="38" font-weight="700" fill="#f4e6c3">V</text>
+      </svg>
+      <h1>Val’s Apps</h1>
+      <p class="callsign">VA3FOD</p>
+      <p class="intro">Free little apps and games, made by Val, VA3FOD.</p>
+    </header>
+    <main class="cards">
+      <a class="card" href="https://va3fod.github.io/Science-Math-Adventure/">
+        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#7c3aed"/>
+          <path d="M15 31c6-11 12-11 18 0" fill="none" stroke="#fde68a" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="24" cy="17" r="5" fill="#fff"/>
+        </svg>
+        <h2>Science &amp; Math Adventure</h2>
+        <p>A free science and math learning game for kids. It works offline, and there are no ads.</p>
+        <span class="open">Open the game <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="card" href="https://va3fod.github.io/Septica/">
+        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="#145a39"/>
+          <text x="24" y="33" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#e9c46a">7</text>
+        </svg>
+        <h2>Șeptică</h2>
+        <p>The classic Romanian card game, for 2 or 4 players versus the computer.</p>
+        <span class="open">Open the game <span aria-hidden="true">→</span></span>
+      </a>
+    </main>
+    <footer>Made by Val, VA3FOD</footer>
+  </div>
+</body>
+</html>
